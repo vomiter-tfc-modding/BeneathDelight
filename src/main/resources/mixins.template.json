@@ -16,6 +16,7 @@
     "food.block.StuffedHoglinBlock_BlockEntityMixin",
     "food.block.StuffedHoglinBlock_BowlAcceptMixin",
     "food.block.StuffedHoglinBlock_BreakRedirectMixin",
+    "recipe.RecipeManager_FDFilterMixin",
     "stove.NetherStoveBlock_FuelAndHeat",
     "stove.NetherStoveBlock_PlacePot",
     "stove.NetherStoveBlockEntity_Accessor",

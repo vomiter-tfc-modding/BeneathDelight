@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_powdery_trapdoor": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "mynethersdelight:powdery_trapdoor"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "beneathdelight:crafting/cabinet/powdery"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_powdery_trapdoor",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "beneathdelight:crafting/cabinet/powdery"
+    ]
+  },
+  "sends_telemetry_event": false
+}

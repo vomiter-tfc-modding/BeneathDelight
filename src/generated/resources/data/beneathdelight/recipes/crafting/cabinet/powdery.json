@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "survivorsdelight:cabinet",
+  "key": {
+    "L": {
+      "item": "mynethersdelight:powdery_slab"
+    },
+    "T": {
+      "item": "mynethersdelight:powdery_trapdoor"
+    }
+  },
+  "pattern": [
+    "LLL",
+    "T T",
+    "LLL"
+  ],
+  "result": {
+    "item": "beneathdelight:powdery_cabinet"
+  },
+  "show_notification": true
+}

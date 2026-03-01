@@ -1,0 +1,30 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "B": {
+      "item": "minecraft:bone_block"
+    },
+    "H": {
+      "item": "mynethersdelight:hoglin_hide"
+    },
+    "L": {
+      "tag": "tfc:lumber"
+    },
+    "M": {
+      "item": "tfc:brass_mechanisms"
+    },
+    "b": {
+      "item": "minecraft:bone"
+    }
+  },
+  "pattern": [
+    "LHL",
+    "bBb",
+    "LML"
+  ],
+  "result": {
+    "item": "mynethersdelight:hoglin_trophy"
+  },
+  "show_notification": true
+}

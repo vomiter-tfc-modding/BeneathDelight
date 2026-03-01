@@ -1,0 +1,20 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "item": "mynethersdelight:hoglin_hide"
+    }
+  ],
+  "result": [
+    {
+      "item": "beneath:cursed_hide"
+    },
+    {
+      "chance": 0.25,
+      "item": "beneath:cursed_hide"
+    }
+  ],
+  "tool": {
+    "tag": "tfc:shears"
+  }
+}

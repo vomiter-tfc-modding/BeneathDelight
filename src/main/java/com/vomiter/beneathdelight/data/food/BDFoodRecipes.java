@@ -58,6 +58,26 @@ public class BDFoodRecipes {
     }
 
     public void save(Consumer<FinishedRecipe> out){
+
+        var provider = BeneathDelight.foodAndCookingGenerator.provider();
+        provider.newBuilder("hoglin_loin")
+                .item(MNDItems.HOGLIN_LOIN.get())
+                .from(Food.PORK)
+                .save();
+        provider.newBuilder("cooked_hoglin_loin")
+                .item(MNDItems.COOKED_LOIN.get())
+                .from(Food.COOKED_PORK)
+                .save();
+        provider.newBuilder("hoglin_sausage")
+                .item(MNDItems.HOGLIN_SAUSAGE.get())
+                .slicedFrom(Food.PORK, 2)
+                .save();
+        provider.newBuilder("cooked_hoglin_sausage")
+                .item(MNDItems.ROASTED_SAUSAGE.get())
+                .slicedFrom(Food.COOKED_PORK, 2)
+                .save();
+
+
         Map.of(
                 ModItems.BOILED_CRIMSON_FUNGUS, Items.CRIMSON_FUNGUS,
                 ModItems.BOILED_CRIMSON_FUNGUS_COLONY, MNDItems.CRIMSON_FUNGUS_COLONY.get(),

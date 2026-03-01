@@ -3,7 +3,7 @@
   "category": "misc",
   "key": {
     "B": {
-      "item": "minecraft:polished_blackstone_bricks"
+      "item": "tfc:fire_bricks"
     },
     "I": {
       "item": "tfc:wrought_iron_grill"
@@ -24,7 +24,7 @@
     "BnB"
   ],
   "result": {
-    "item": "farmersdelight:stove"
+    "item": "mynethersdelight:nether_bricks_stove"
   },
   "show_notification": true
 }

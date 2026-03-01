@@ -2,7 +2,6 @@ package com.vomiter.beneathdelight.data;
 
 import com.vomiter.beneathdelight.BeneathDelight;
 import com.vomiter.beneathdelight.data.loot.ModLootTables;
-import com.vomiter.beneathdelight.data.recipe.ModCraftingRecipes;
 import com.vomiter.beneathdelight.data.recipe.ModRecipeProvider;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.DataGenerator;

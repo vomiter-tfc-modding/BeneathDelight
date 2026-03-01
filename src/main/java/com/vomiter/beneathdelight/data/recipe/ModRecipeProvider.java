@@ -17,7 +17,7 @@ public class ModRecipeProvider extends RecipeProvider {
 
     @Override
     protected void buildRecipes(@NotNull Consumer<FinishedRecipe> out) {
-        new ModCraftingRecipes().save(out);
+        new ModNonFoodRecipes().save(out);
         new BDFoodRecipes().save(out);
     }
 }

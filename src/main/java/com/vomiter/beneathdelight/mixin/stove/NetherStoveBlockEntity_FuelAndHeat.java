@@ -23,7 +23,7 @@ import vectorwing.farmersdelight.common.block.StoveBlock;
 @Mixin(value = NetherStoveBlockEntity.class, remap = false)
 public abstract class NetherStoveBlockEntity_FuelAndHeat implements HeatSourceBlockEntity, IStoveBlockEntity {
     @Unique private static final String SD_LEFT_BURN_TICK = "SDLeftBurnTick";
-    @Unique private int leftBurnTick = 1200;
+    @Unique private int leftBurnTick = Integer.MAX_VALUE;
     @Unique private final HeatingRecipe[] cachedHeatingRecipes = new HeatingRecipe[6];
 
     public float sdtfc$getTemperature(){
@@ -35,15 +35,11 @@ public abstract class NetherStoveBlockEntity_FuelAndHeat implements HeatSourceBl
     private static void injectedCookingTick(Level level, BlockPos pos, BlockState state, NetherStoveBlockEntity stove, CallbackInfo ci){
         var self = (IStoveBlockEntity)stove;
         if(self == null) return;
-        if(state.getValue(StoveBlock.LIT) && self.sdtfc$getLeftBurnTick() > 0){
-            if(level.getGameTime() % 20 == 0) self.sdtfc$reduceLeftBurnTick(1);
+        if(state.getValue(StoveBlock.LIT)){
             if(ModList.get().isLoaded("firmalife")) StoveOvenCompat.ovenHeating(level, pos, state, self);
             if(level.getGameTime() % 100 == 0){
                 level.sendBlockUpdated(pos, state, state, 3);
             }
-        }
-        else if(state.getValue(StoveBlock.LIT) && state.getBlock() instanceof StoveBlock stoveBlock){
-            stoveBlock.extinguish(state, level, pos);
         }
     }
 
@@ -62,7 +58,7 @@ public abstract class NetherStoveBlockEntity_FuelAndHeat implements HeatSourceBl
     public int sdtfc$getLeftBurnTick(){return leftBurnTick;}
 
     @Unique
-    public void sdtfc$setLeftBurnTick(int v){leftBurnTick = v;}
+    public void sdtfc$setLeftBurnTick(int v){leftBurnTick = Integer.MAX_VALUE;}
 
     @Override
     public HeatingRecipe[] sdtfc$getCachedRecipes() {
