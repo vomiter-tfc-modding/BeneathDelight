@@ -12,5 +12,6 @@ plugins {
     id 'org.gradle.toolchains.foojay-resolver-convention' version '0.7.0'
 }
 
+def workspace = providers.gradleProperty("workspace").get()
 include(":survivorsdelight")
-project(":survivorsdelight").projectDir = file("C:/Users/HYK/IdeaProjects/TFCAddon/SD/SurvivorsDelight1201")
+project(":survivorsdelight").projectDir = file("${workspace}/TFC_ADDON/SD/SurvivorsDelight1201")

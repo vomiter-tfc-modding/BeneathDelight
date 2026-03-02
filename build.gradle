@@ -6,20 +6,6 @@ plugins {
     id 'com.vomiter.langmerge'
 }
 
-def devRuntimeProject(String path) {
-    evaluationDependsOn(path)
-    dependencies {
-        runtimeOnly files(
-                project(path)
-                        .tasks.named("devJar")
-                        .flatMap { it.archiveFile }
-        )
-        compileOnly project(path)
-    }
-    tasks.matching { it.name in ["runClient", "runServer", "runGameTestServer"] }.configureEach {
-        dependsOn("${path}:devJar")
-    }
-}
 
 
 langMerge {
@@ -99,7 +85,26 @@ dependencies {
     runtimeOnly fg.deobf("curse.maven:tfc-ie-crossover-830886:7400855")
     runtimeOnly fg.deobf("curse.maven:immersive-engineering-231951:6206989")
 }
+
+
+def devRuntimeProject(String path) {
+    evaluationDependsOn(path)
+    dependencies {
+        runtimeOnly files(
+                project(path)
+                        .tasks.named("devJar")
+                        .flatMap { it.archiveFile }
+        )
+        compileOnly project(path)
+    }
+    tasks.matching { it.name in ["runClient", "runServer", "runGameTestServer"] }.configureEach {
+        dependsOn("${path}:devJar")
+    }
+}
 devRuntimeProject(":survivorsdelight")
+
+/*
+ */
 
 def modProps = [
         minecraft_version      : minecraft_version,
