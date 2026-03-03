@@ -39,7 +39,7 @@ public class ResurgentSoilMixin {
 
     @Inject(
             method = "performBonemealIfPossible",
-            at = @At(value = "INVOKE", target = "Lnet/minecraft/world/level/block/BonemealableBlock;performBonemeal(Lnet/minecraft/server/level/ServerLevel;Lnet/minecraft/util/RandomSource;Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/block/state/BlockState;)V"),
+            at = @At(value = "INVOKE", target = "Lnet/minecraft/world/level/block/BonemealableBlock;performBonemeal(Lnet/minecraft/server/level/ServerLevel;Lnet/minecraft/util/RandomSource;Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/block/state/BlockState;)V", remap = true),
             cancellable = true
     )
     private void tfc_tree_growth_boost(Block block, BlockPos pos, BlockState state, ServerLevel level, int distance, CallbackInfo ci){
