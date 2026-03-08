@@ -1,0 +1,34 @@
+{
+  "type": "farmersdelight:cooking",
+  "container": {
+    "item": "minecraft:bowl"
+  },
+  "cookingtime": 600,
+  "experience": 10.0,
+  "fluid": {
+    "amount": 500,
+    "ingredient": {
+      "tag": "survivorsdelight:cooking_oils"
+    }
+  },
+  "ingredients": [
+    {
+      "type": "tfc:not_rotten",
+      "ingredient": {
+        "item": "mynethersdelight:raw_stuffed_hoglin"
+      }
+    },
+    {
+      "type": "tfc:not_rotten",
+      "ingredient": {
+        "item": "farmersdelight:nether_salad"
+      }
+    },
+    {
+      "tag": "mynethersdelight:hot_spice"
+    }
+  ],
+  "result": {
+    "item": "mynethersdelight:roast_stuffed_hoglin"
+  }
+}

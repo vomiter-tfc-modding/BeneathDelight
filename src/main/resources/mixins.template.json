@@ -14,7 +14,7 @@
     "food.block.MagmaCakeBlock_SliceMixin",
     "food.block.StriderLoafBlockMixin",
     "food.block.StuffedHoglinBlock_BlockEntityMixin",
-    "food.block.StuffedHoglinBlock_BowlAcceptMixin",
+    "food.block.StuffedHoglinBlock_ServingMixin",
     "food.block.StuffedHoglinBlock_BreakRedirectMixin",
     "recipe.RecipeManager_FDFilterMixin",
     "stove.NetherStoveBlock_FuelAndHeat",

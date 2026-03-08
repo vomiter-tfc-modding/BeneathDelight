@@ -42,7 +42,13 @@ public abstract class RecipeManager_FDFilterMixin {
             "crafting/nethers_stove",
             "crafting/block_of_powdery_cabinet",
             "crafting/hoglin_trophy",
-            "cutting/hoglin_hide"
+            "cutting/hoglin_hide",
+            "crafting/nether_burger",
+            "cooking/sausage_and_potatoes",
+            "crafting/breakfast_sampler",
+            "cooking/fried_hoglin_chop",
+            "crafting/raw_stuffed_hoglin",
+            "cooking/roast_stuffed_hoglin"
     );
 
 

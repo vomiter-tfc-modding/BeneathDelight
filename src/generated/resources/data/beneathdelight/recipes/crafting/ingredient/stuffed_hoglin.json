@@ -1,0 +1,28 @@
+{
+  "type": "survivorsdelight:nutrition_crafting",
+  "key": {
+    "C": {
+      "item": "beneathdelight:boiled_crimson_fungus_colony"
+    },
+    "H": {
+      "item": "mynethersdelight:hoglin_hide"
+    },
+    "L": {
+      "item": "mynethersdelight:hoglin_loin"
+    },
+    "W": {
+      "item": "beneathdelight:boiled_warped_fungus_colony"
+    },
+    "h": {
+      "item": "farmersdelight:ham"
+    }
+  },
+  "pattern": [
+    "hWh",
+    "LHL",
+    "hCh"
+  ],
+  "result": {
+    "item": "mynethersdelight:raw_stuffed_hoglin"
+  }
+}

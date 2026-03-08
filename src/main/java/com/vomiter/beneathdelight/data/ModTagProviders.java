@@ -2,8 +2,12 @@ package com.vomiter.beneathdelight.data;
 
 import com.eerussianguy.beneath.common.blocks.BeneathBlockTags;
 import com.soytutta.mynethersdelight.common.registry.MNDBlocks;
+import com.soytutta.mynethersdelight.common.registry.MNDItems;
 import com.vomiter.beneathdelight.BeneathDelight;
 import com.vomiter.beneathdelight.Helpers;
+import com.vomiter.beneathdelight.registry.ModItems;
+import com.vomiter.survivorsdelight.data.tags.SDTags;
+import net.dries007.tfc.common.TFCTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.DataGenerator;
@@ -65,7 +69,22 @@ public class ModTagProviders {
 
         @Override
         protected void addTags(HolderLookup.@NotNull Provider p_256380_) {
-            //tag(test).add(Items.ACACIA_BOAT);
+            var usableInSandwich = create(Helpers.id("tfc", "foods/usable_in_sandwich"));
+            tag(usableInSandwich).add(
+                    ModItems.BOILED_CRIMSON_FUNGUS.get(),
+                    ModItems.BOILED_CRIMSON_ROOTS.get(),
+                    ModItems.BOILED_WARPED_FUNGUS.get(),
+                    ModItems.BOILED_WARPED_ROOTS.get()
+            );
+
+            tag(SDTags.ItemTags.SLICES_AND_SERVINGS)
+                    .add(
+                            MNDItems.SLICES_OF_BREAD.get(),
+                            MNDItems.STRIDER_SLICE.get(),
+                            MNDItems.MAGMA_CAKE_SLICE.get(),
+                            MNDItems.PLATE_OF_STUFFED_HOGLIN_HAM.get(),
+                            MNDItems.PLATE_OF_STUFFED_HOGLIN_SNOUT.get()
+                    );
         }
     }
 

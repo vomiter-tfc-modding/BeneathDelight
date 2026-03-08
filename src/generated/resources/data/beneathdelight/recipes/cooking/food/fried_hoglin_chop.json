@@ -25,7 +25,13 @@
       }
     },
     {
-      "item": "minecraft:egg"
+      "type": "tfc:not_rotten",
+      "ingredient": {
+        "item": "minecraft:egg"
+      }
+    },
+    {
+      "tag": "mynethersdelight:hot_spice"
     },
     {
       "type": "tfc:not_rotten",

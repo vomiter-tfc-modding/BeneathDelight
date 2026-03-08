@@ -1,0 +1,29 @@
+{
+  "type": "survivorsdelight:nutrition_crafting",
+  "key": {
+    "B": {
+      "item": "minecraft:bowl"
+    },
+    "C": {
+      "item": "beneathdelight:boiled_crimson_fungus"
+    },
+    "R": [
+      {
+        "item": "beneathdelight:boiled_crimson_roots"
+      },
+      {
+        "item": "beneathdelight:boiled_warped_roots"
+      }
+    ],
+    "W": {
+      "item": "beneathdelight:boiled_warped_fungus"
+    }
+  },
+  "pattern": [
+    "CRW",
+    " B "
+  ],
+  "result": {
+    "item": "farmersdelight:nether_salad"
+  }
+}
