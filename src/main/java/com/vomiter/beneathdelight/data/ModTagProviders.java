@@ -83,7 +83,8 @@ public class ModTagProviders {
                             MNDItems.STRIDER_SLICE.get(),
                             MNDItems.MAGMA_CAKE_SLICE.get(),
                             MNDItems.PLATE_OF_STUFFED_HOGLIN_HAM.get(),
-                            MNDItems.PLATE_OF_STUFFED_HOGLIN_SNOUT.get()
+                            MNDItems.PLATE_OF_STUFFED_HOGLIN_SNOUT.get(),
+                            MNDItems.PLATE_OF_STUFFED_HOGLIN.get()
                     );
         }
     }
