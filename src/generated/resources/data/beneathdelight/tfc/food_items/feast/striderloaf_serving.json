@@ -1,0 +1,15 @@
+{
+  "ingredient": [
+    {
+      "item": "mynethersdelight:plate_of_striderloaf"
+    },
+    {
+      "item": "mynethersdelight:plate_of_cold_striderloaf"
+    }
+  ],
+  "hunger": 4,
+  "saturation": 0.0,
+  "water": 0.0,
+  "decay_modifier": 3.0,
+  "protein": 1.5
+}

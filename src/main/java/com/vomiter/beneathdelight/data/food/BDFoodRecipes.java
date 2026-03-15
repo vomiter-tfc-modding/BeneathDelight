@@ -5,24 +5,32 @@ import com.soytutta.mynethersdelight.common.registry.MNDBlocks;
 import com.soytutta.mynethersdelight.common.registry.MNDItems;
 import com.soytutta.mynethersdelight.common.tag.MNDTags;
 import com.vomiter.beneathdelight.BeneathDelight;
+import com.vomiter.beneathdelight.Helpers;
 import com.vomiter.beneathdelight.registry.ModItems;
 import com.vomiter.survivorsdelight.data.food.SDFoodAndRecipeGenerator;
 import com.vomiter.survivorsdelight.data.food.SDFoodDataProvider;
 import com.vomiter.survivorsdelight.data.tags.SDTags;
 import com.vomiter.survivorsdelight.util.SDUtils;
+import net.dries007.tfc.common.TFCTags;
 import net.dries007.tfc.common.capabilities.food.FoodData;
 import net.dries007.tfc.common.items.Food;
+import net.dries007.tfc.common.recipes.ingredients.NotRottenIngredient;
+import net.minecraft.advancements.critereon.InventoryChangeTrigger;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.recipes.FinishedRecipe;
+import net.minecraft.data.recipes.RecipeCategory;
+import net.minecraft.data.recipes.ShapelessRecipeBuilder;
 import net.minecraft.tags.FluidTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraft.world.item.crafting.ShapelessRecipe;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.material.Fluid;
 import net.minecraft.world.level.material.Fluids;
 import net.minecraftforge.registries.RegistryObject;
+import vectorwing.farmersdelight.data.builder.CuttingBoardRecipeBuilder;
 
 import java.util.List;
 import java.util.Map;
@@ -82,6 +90,26 @@ public class BDFoodRecipes {
         provider.newBuilder("food/roast_ear")
                 .item(MNDItems.ROAST_EAR.get())
                 .slicedFrom(Food.COOKED_PORK, 2)
+                .save();
+
+        provider.newBuilder("feast/striderloaf")
+                .ingredient(Ingredient.of(MNDItems.STRIDERLOAF_BLOCK.get(), MNDItems.COLD_STRIDERLOAF_BLOCK.get()).toJson())
+                .multipliedFrom(Food.MUTTON, 4)
+                .save();
+
+        provider.newBuilder("feast/striderloaf_serving")
+                .ingredient(Ingredient.of(MNDItems.STRIDERLOAF.get(), MNDItems.COLD_STRIDERLOAF.get()).toJson())
+                .from(Food.MUTTON)
+                .save();
+
+        provider.newBuilder("ingredient/strider_slice")
+                .item(MNDItems.STRIDER_SLICE.get())
+                .from(Food.MUTTON)
+                .save();
+
+        provider.newBuilder("ingredient/minced_strider")
+                .item(MNDItems.MINCED_STRIDER.get())
+                .slicedFrom(Food.MUTTON, 2)
                 .save();
 
         Map.of(
@@ -170,6 +198,32 @@ public class BDFoodRecipes {
                 .fluid(milks, 100)
                 .build(out)
                 .saveFoodData();
+
+        CuttingBoardRecipeBuilder.cuttingRecipe(
+                        NotRottenIngredient.of(Ingredient.of(MNDItems.STRIDER_SLICE.get())),
+                        Ingredient.of(TFCTags.Items.KNIVES),
+                        MNDItems.MINCED_STRIDER.get(), 2)
+                .addResult(Items.STRING, 2)
+                .addResultWithChance(Items.STRING, 0.5f, 2)
+                .build(out, Helpers.id("cutting/strider_slice"));
+
+        ShapelessRecipeBuilder.shapeless(
+                RecipeCategory.FOOD,
+                MNDItems.STRIDERLOAF_BLOCK.get())
+                .requires(NotRottenIngredient.of(Ingredient.of(MNDItems.STRIDER_SLICE.get())))
+                .requires(NotRottenIngredient.of(Ingredient.of(MNDItems.MINCED_STRIDER.get())))
+                .requires(NotRottenIngredient.of(Ingredient.of(MNDItems.MINCED_STRIDER.get())))
+                .requires(NotRottenIngredient.of(Ingredient.of(MNDItems.MINCED_STRIDER.get())))
+                .requires(NotRottenIngredient.of(Ingredient.of(MNDItems.MINCED_STRIDER.get())))
+                .requires(NotRottenIngredient.of(Ingredient.of(MNDItems.MINCED_STRIDER.get())))
+                .requires(NotRottenIngredient.of(Ingredient.of(MNDItems.MINCED_STRIDER.get())))
+                .requires(Items.BOWL)
+                .unlockedBy(
+                        "get_strider_slice",
+                        InventoryChangeTrigger.TriggerInstance.hasItems(MNDItems.STRIDER_SLICE.get())
+                )
+                .save(out, Helpers.id("feast/striderloaf"));
+        ;
     }
 
 }

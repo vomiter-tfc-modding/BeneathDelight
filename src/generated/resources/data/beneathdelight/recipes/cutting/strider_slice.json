@@ -1,0 +1,29 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "type": "tfc:not_rotten",
+      "ingredient": {
+        "item": "mynethersdelight:strider_slice"
+      }
+    }
+  ],
+  "result": [
+    {
+      "count": 2,
+      "item": "mynethersdelight:minced_strider"
+    },
+    {
+      "count": 2,
+      "item": "minecraft:string"
+    },
+    {
+      "chance": 0.5,
+      "count": 2,
+      "item": "minecraft:string"
+    }
+  ],
+  "tool": {
+    "tag": "tfc:knives"
+  }
+}

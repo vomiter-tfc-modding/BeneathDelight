@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "get_strider_slice": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "mynethersdelight:strider_slice"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "beneathdelight:feast/striderloaf"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "get_strider_slice",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "beneathdelight:feast/striderloaf"
+    ]
+  },
+  "sends_telemetry_event": false
+}
