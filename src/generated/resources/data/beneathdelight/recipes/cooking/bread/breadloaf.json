@@ -1,0 +1,16 @@
+{
+  "type": "farmersdelight:cooking",
+  "cookingtime": 200,
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "type": "tfc:not_rotten",
+      "ingredient": {
+        "item": "mynethersdelight:ghast_sourdough"
+      }
+    }
+  ],
+  "result": {
+    "item": "mynethersdelight:bread_loaf"
+  }
+}

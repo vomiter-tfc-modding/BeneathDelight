@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "get_ghamati": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "mynethersdelight:ghasmati"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "beneathdelight:crafting/ingredient/ghast_dough"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "get_ghamati",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "beneathdelight:crafting/ingredient/ghast_dough"
+    ]
+  },
+  "sends_telemetry_event": false
+}

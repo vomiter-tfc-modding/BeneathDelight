@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "mynethersdelight:ghasmati"
+    },
+    {
+      "tag": "tfc:foods/dough"
+    }
+  ],
+  "result": {
+    "item": "mynethersdelight:ghast_dough"
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "get_ghast_dough": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "mynethersdelight:ghast_dough"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "beneathdelight:ingredient/ghast_dough"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "get_ghast_dough",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "beneathdelight:ingredient/ghast_dough"
+    ]
+  },
+  "sends_telemetry_event": false
+}
