@@ -1,18 +1,24 @@
 package com.vomiter.beneathdelight.mixin.food.block;
 
+import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
+import com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation;
 import com.llamalad7.mixinextras.sugar.Local;
 import com.mojang.datafixers.util.Pair;
 import com.soytutta.mynethersdelight.common.block.MagmaCakeBlock;
+import com.vomiter.beneathdelight.Helpers;
 import com.vomiter.beneathdelight.common.food.block.DecayingMagmaCakeBlockEntity;
 import com.vomiter.survivorsdelight.common.food.block.DecayFoodTransfer;
+import net.dries007.tfc.common.TFCTags;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
+import net.minecraft.tags.TagKey;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.food.FoodProperties;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
@@ -24,12 +30,21 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.ModifyVariable;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
+import vectorwing.farmersdelight.FarmersDelight;
 import vectorwing.farmersdelight.common.utility.ItemUtils;
 
 @Mixin(value = MagmaCakeBlock.class, remap = false)
 public abstract class MagmaCakeBlock_SliceMixin {
 
     @Shadow public abstract ItemStack getPieSliceItem();
+
+    @WrapOperation(method = "use", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/item/ItemStack;is(Lnet/minecraft/tags/TagKey;)Z", remap = true))
+    private boolean sdtfc$useTFCKnife(ItemStack itemStack, TagKey<Item> tagKey, Operation<Boolean> original){
+        if(tagKey.location().equals(Helpers.id(FarmersDelight.MODID, "tools/knives"))){
+            return original.call(itemStack, TFCTags.Items.KNIVES);
+        }
+        return original.call(itemStack, tagKey);
+    }
 
     @Inject(method = "cutSlice", at = @At(value = "INVOKE", target = "Lvectorwing/farmersdelight/common/utility/ItemUtils;spawnItemEntity(Lnet/minecraft/world/level/Level;Lnet/minecraft/world/item/ItemStack;DDDDDD)V"), cancellable = true)
     private void sdtfc$cutDecaySlice(Level level, BlockPos pos, BlockState state, Player player, CallbackInfoReturnable<InteractionResult> cir){

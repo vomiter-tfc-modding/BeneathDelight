@@ -3,11 +3,11 @@ package com.vomiter.beneathdelight.data;
 import com.eerussianguy.beneath.common.blocks.BeneathBlockTags;
 import com.soytutta.mynethersdelight.common.registry.MNDBlocks;
 import com.soytutta.mynethersdelight.common.registry.MNDItems;
+import com.soytutta.mynethersdelight.common.tag.MNDTags;
 import com.vomiter.beneathdelight.BeneathDelight;
 import com.vomiter.beneathdelight.Helpers;
 import com.vomiter.beneathdelight.registry.ModItems;
 import com.vomiter.survivorsdelight.data.tags.SDTags;
-import net.dries007.tfc.common.TFCTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.DataGenerator;
@@ -65,10 +65,13 @@ public class ModTagProviders {
                     id
             );
         }
-        public static TagKey<Item> test = create(Helpers.id("test"));
 
         @Override
         protected void addTags(HolderLookup.@NotNull Provider p_256380_) {
+            tag(BDTags.GHAST_DOUGHS)
+                    .add(MNDItems.GHAST_DOUGH.get())
+                    .add(MNDItems.GHAST_SOURDOUGH.get());
+
             var usableInSandwich = create(Helpers.id("tfc", "foods/usable_in_sandwich"));
             tag(usableInSandwich).add(
                     ModItems.BOILED_CRIMSON_FUNGUS.get(),

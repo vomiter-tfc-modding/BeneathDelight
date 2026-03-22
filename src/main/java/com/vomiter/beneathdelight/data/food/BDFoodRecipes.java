@@ -1,11 +1,11 @@
 package com.vomiter.beneathdelight.data.food;
 
-import com.eerussianguy.beneath.common.items.BeneathItems;
 import com.soytutta.mynethersdelight.common.registry.MNDBlocks;
 import com.soytutta.mynethersdelight.common.registry.MNDItems;
 import com.soytutta.mynethersdelight.common.tag.MNDTags;
 import com.vomiter.beneathdelight.BeneathDelight;
 import com.vomiter.beneathdelight.Helpers;
+import com.vomiter.beneathdelight.data.BDTags;
 import com.vomiter.beneathdelight.registry.ModItems;
 import com.vomiter.survivorsdelight.data.food.SDFoodAndRecipeGenerator;
 import com.vomiter.survivorsdelight.data.food.SDFoodDataProvider;
@@ -25,14 +25,11 @@ import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
-import net.minecraft.world.item.crafting.ShapelessRecipe;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.material.Fluid;
 import net.minecraft.world.level.material.Fluids;
-import net.minecraftforge.registries.RegistryObject;
 import vectorwing.farmersdelight.data.builder.CuttingBoardRecipeBuilder;
 
-import java.util.List;
 import java.util.Map;
 import java.util.function.Consumer;
 
@@ -223,7 +220,58 @@ public class BDFoodRecipes {
                         InventoryChangeTrigger.TriggerInstance.hasItems(MNDItems.STRIDER_SLICE.get())
                 )
                 .save(out, Helpers.id("feast/striderloaf"));
-        ;
+
+        ShapelessRecipeBuilder.shapeless(
+                        RecipeCategory.FOOD,
+                        MNDItems.GHAST_SOURDOUGH.get())
+                .requires(Ingredient.of(MNDItems.GHAST_DOUGH.get()))
+                .requires(NotRottenIngredient.of(SDTags.ItemTags.TFC_DOUGHS))
+                .requires(NotRottenIngredient.of(SDTags.ItemTags.TFC_DOUGHS))
+                .requires(NotRottenIngredient.of(SDTags.ItemTags.TFC_DOUGHS))
+                .unlockedBy(
+                        "get_ghast_dough",
+                        InventoryChangeTrigger.TriggerInstance.hasItems(MNDItems.GHAST_DOUGH.get())
+                )
+                .save(out, Helpers.id("ingredient/ghast_dough"));
+
+        cook(
+                "bread/breadloaf",
+                MNDItems.BREAD_LOAF_BLOCK.get(),
+                1, 200, 1
+        ).food(MNDItems.GHAST_SOURDOUGH.get())
+                .build(out)
+                .getFoodData()
+                .from(getTFCFoodData(Food.WHEAT_BREAD))
+                .save();
+
+        provider.newBuilder("ingredient/ghast_doughs")
+                .ingredient(Ingredient.of(BDTags.GHAST_DOUGHS).toJson())
+                .from(getTFCFoodData(Food.WHEAT_DOUGH))
+                .setDecay(0)
+                .save();
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, MNDItems.GHAST_DOUGH.get())
+                .requires(MNDItems.GHASMATI.get())
+                .requires(SDTags.ItemTags.TFC_DOUGHS)
+                .unlockedBy(
+                        "get_ghamati",
+                        InventoryChangeTrigger.TriggerInstance.hasItems(MNDItems.GHASMATI.get())
+                )
+                .save(out, Helpers.id("crafting/ingredient/ghast_dough"));
+
+        CuttingBoardRecipeBuilder.cuttingRecipe(
+                        Ingredient.of(MNDItems.GHASTA.get()),
+                        Ingredient.of(TFCTags.Items.KNIVES),
+                        MNDItems.GHASMATI.get(), 1)
+                .addResultWithChance(MNDItems.GHASMATI.get(), 0.5f, 1)
+                .build(out, Helpers.id("cutting/ghasmati"));
+
+        CuttingBoardRecipeBuilder.cuttingRecipe(
+                        NotRottenIngredient.of(Ingredient.of(MNDItems.GHAST_SOURDOUGH.get())),
+                        Ingredient.of(TFCTags.Items.KNIVES),
+                        MNDItems.GHAST_DOUGH.get(), 3)
+                .build(out, Helpers.id("cutting/ghast_dough"));
+
     }
 
 }

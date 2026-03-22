@@ -49,7 +49,10 @@ public abstract class RecipeManager_FDFilterMixin {
             "cooking/fried_hoglin_chop",
             "crafting/raw_stuffed_hoglin",
             "cooking/roast_stuffed_hoglin",
-            "crafting/striderloaf"
+            "crafting/striderloaf",
+            "cutting/slices_of_bread",
+            "crafting/ghast_sourdough",
+            "crafting/ghast_dough"
     );
 
 
