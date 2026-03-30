@@ -1,0 +1,42 @@
+{
+  "type": "farmersdelight:cooking",
+  "container": {
+    "item": "minecraft:bowl"
+  },
+  "cookingtime": 600,
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "type": "tfc:not_rotten",
+      "ingredient": {
+        "item": "tfc:food/boiled_egg"
+      }
+    },
+    {
+      "type": "tfc:not_rotten",
+      "ingredient": {
+        "item": "tfc:food/boiled_egg"
+      }
+    },
+    {
+      "type": "tfc:not_rotten",
+      "ingredient": [
+        {
+          "item": "mynethersdelight:hoglin_sausage"
+        },
+        {
+          "item": "farmersdelight:minced_beef"
+        }
+      ]
+    },
+    {
+      "type": "tfc:not_rotten",
+      "ingredient": {
+        "tag": "tfc:sandwich_bread"
+      }
+    }
+  ],
+  "result": {
+    "item": "mynethersdelight:scotch_eggs"
+  }
+}

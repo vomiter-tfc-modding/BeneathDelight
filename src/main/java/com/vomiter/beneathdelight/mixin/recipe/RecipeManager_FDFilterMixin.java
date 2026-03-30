@@ -52,7 +52,27 @@ public abstract class RecipeManager_FDFilterMixin {
             "crafting/striderloaf",
             "cutting/slices_of_bread",
             "crafting/ghast_sourdough",
-            "crafting/ghast_dough"
+            "crafting/ghast_dough",
+            "crafting/stuffed_pepper",
+            "crafting/spicy_skewer",
+            "cooking/spicy_hoglin_stew",
+            "cooking/hot_wings",
+            "cooking/spicy_curry",
+            "cooking/egg_soup",
+            "crafting/blue_tenderloin_steak",
+            "crafting/bacon_wrapped_sausage_stick",
+            "crafting/red_loin_on_a_stick",
+            "crafting/ghasta_with_cream",
+            "crafting/burnt_roll",
+            "cooking/burn_roll",
+            "cooking/deviled_egg",
+            "cooking/scotch_eggs",
+            "crafting/ghast_salad",
+            "cooking/spicy_noodle_soup",
+            "cooking/twisted_ghasta",
+            "cooking/fries_ghasta",
+            "cooking/giant_tentacles",
+            "crafting/spicy_cutton"
     );
 
 

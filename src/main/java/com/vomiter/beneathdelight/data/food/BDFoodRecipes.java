@@ -13,7 +13,9 @@ import com.vomiter.survivorsdelight.data.tags.SDTags;
 import com.vomiter.survivorsdelight.util.SDUtils;
 import net.dries007.tfc.common.TFCTags;
 import net.dries007.tfc.common.capabilities.food.FoodData;
+import net.dries007.tfc.common.capabilities.food.Nutrient;
 import net.dries007.tfc.common.items.Food;
+import net.dries007.tfc.common.items.TFCItems;
 import net.dries007.tfc.common.recipes.ingredients.NotRottenIngredient;
 import net.minecraft.advancements.critereon.InventoryChangeTrigger;
 import net.minecraft.core.registries.Registries;
@@ -28,6 +30,7 @@ import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.material.Fluid;
 import net.minecraft.world.level.material.Fluids;
+import vectorwing.farmersdelight.common.tag.ForgeTags;
 import vectorwing.farmersdelight.data.builder.CuttingBoardRecipeBuilder;
 
 import java.util.Map;
@@ -67,7 +70,189 @@ public class BDFoodRecipes {
 
     public void save(Consumer<FinishedRecipe> out){
 
+        craft("feast/ghasta_with_cream", MNDItems.GHASTA_WITH_CREAM_BLOCK.get(), 1)
+                .shape("ggg", "gtc", "gbg")
+                .defineFood('g', MNDTags.GHAST_MEATS)
+                .defineNonFood('b', Items.BOWL)
+                .defineNonFood('t', Items.GHAST_TEAR)
+                .defineNonFood('c', Items.MAGMA_CREAM)
+                .build(out)
+                .saveFoodData();
+
+
+        cook("food/burnt_roll", MNDItems.BURNT_ROLL.get(), 2, 500, 0.5)
+                .food(SDTags.ItemTags.TFC_RAW_MEATS)
+                .nonfood(Items.MAGMA_CREAM)
+                .nonfood(Items.MAGMA_CREAM)
+                .build(out)
+                .saveFoodData();
+
+        cook("food/deviled_egg", MNDItems.DEVILED_EGG.get(), 2, 500, 1)
+                .food(Food.BOILED_EGG)
+                .nonfood(MNDTags.HOT_SPICE)
+                .food(Ingredient.of(MNDItems.HOGLIN_SAUSAGE.get()))
+                .build(out)
+                .saveFoodData();
+
+        cook("food/scotch_eggs", MNDItems.SCOTCH_EGGS.get(), 1, 600, 1, Items.BOWL)
+                .food(Food.BOILED_EGG)
+                .food(Food.BOILED_EGG)
+                .food(Ingredient.of(MNDItems.HOGLIN_SAUSAGE.get(), vectorwing.farmersdelight.common.registry.ModItems.MINCED_BEEF.get()))
+                .food(bread)
+                .build(out)
+                .saveFoodData();
+
+
+        craft("food/ghast_salad", MNDItems.GHAST_SALAD.get(), 1)
+                .row("gs")
+                .defineFood('g', MNDTags.GHAST_MEATS)
+                .defineFood('s', TFCItems.SALADS.get(Nutrient.VEGETABLES).get())
+                .build(out)
+                .saveFoodData();
+
+        cook("food/spicy_noodle_soup", MNDItems.SPICY_NOODLE_SOUP.get(), 1, 600, 1, Items.BOWL)
+                .food(MNDItems.GHASTA.get())
+                .food(Items.EGG)
+                .nonfood(MNDItems.BULLET_PEPPER.get())
+                .food(vectorwing.farmersdelight.common.registry.ModItems.BONE_BROTH.get())
+                .food(MNDTags.RAW_HOGLIN)
+                .build(out)
+                .saveFoodData();
+
+        cook("food/twisted_ghasta", MNDItems.TWISTED_GHASTA.get(), 1, 600, 1, Items.BOWL)
+                .food(MNDItems.GHASTA.get())
+                .food(ModItems.BOILED_WARPED_FUNGUS.get())
+                .food(ModItems.BOILED_WARPED_FUNGUS.get())
+                .fluid(oils, 100)
+                .build(out)
+                .saveFoodData();
+
+
+        cook("food/fried_gasta", MNDItems.FRIES_GHASTA.get(), 1, 600, 0.5, Items.PAPER)
+                .food(MNDItems.GHASTA.get())
+                .food(MNDItems.GHASTA.get())
+                .fluid(oils, 50)
+                .build(out)
+                .saveFoodData();
+
+        craft("food/spicy_cutton", MNDItems.SPICY_COTTON.get(), 1)
+                .row("gp")
+                .row("rg")
+                .defineFood('g', MNDItems.GHASTA.get())
+                .defineNonFood('p', MNDItems.BULLET_PEPPER.get())
+                .defineNonFood('r', Items.BLAZE_ROD)
+                .build(out)
+                .saveFoodData();
+
+        cook("food/giant_takoyaki", MNDItems.GIANT_TAKOYAKI.get(), 1, 600, 0.5, Items.BOWL)
+                .food(MNDItems.GHASTA.get())
+                .food(MNDItems.GHASTA.get())
+                .food(SDTags.ItemTags.TFC_DOUGHS)
+                .food(SDUtils.getTFCFoodItem(Food.ONION))
+                .fluid(oils, 100)
+                .build(out)
+                .saveFoodData();
+
+        craft("food/bacon_wrapped_sausage_on_a_stick", MNDItems.BACON_WRAPPED_SAUSAGE_STICK.get(), 1)
+                .row("Sb")
+                .row("s ")
+                .defineFood('S', MNDItems.ROASTED_SAUSAGE.get())
+                .defineFood('b', vectorwing.farmersdelight.common.registry.ModItems.COOKED_BACON.get())
+                .defineNonFood('s', Items.STICK)
+                .build(out)
+                .saveFoodData();
+
+        craft("food/blue_tenderloin_steak", MNDItems.BLUE_TENDERLOIN_STEAK.get(), 1)
+                .row("lw")
+                .row("rb")
+                .defineFood('l', MNDItems.COOKED_LOIN.get())
+                .defineFood('w', ModItems.BOILED_WARPED_FUNGUS.get())
+                .defineFood('r', ModItems.BOILED_WARPED_ROOTS.get())
+                .defineNonFood('b', Items.BOWL)
+                .build(out)
+                .saveFoodData();
+
+        craft("food/red_loin_on_a_stick", MNDItems.RED_LOIN_STICK.get(), 1)
+                .row("lc")
+                .row("rs")
+                .defineFood('l', MNDItems.COOKED_LOIN.get())
+                .defineFood('c', ModItems.BOILED_CRIMSON_FUNGUS.get())
+                .defineFood('r', Items.RED_MUSHROOM)
+                .defineNonFood('s', Items.STICK)
+                .build(out)
+                .saveFoodData();
+
+        cook("food/egg_soup", MNDItems.EGG_SOUP.get(), 1, 600, 1, Items.BOWL)
+                .food(vectorwing.farmersdelight.common.registry.ModItems.BONE_BROTH.get())
+                .food(Items.EGG)
+                .food(Items.EGG)
+                .food(SDUtils.getTFCFoodItem(Food.ONION))
+                .build(out)
+                .saveFoodData();
+
+        cook("food/spicy_curry", MNDItems.SPICY_CURRY.get(), 1, 900, 1, Items.BOWL)
+                .food(SDUtils.getTFCFoodItem(Food.RICE))
+                .food(SDTags.ItemTags.TFC_VEGETABLES)
+                .food(SDUtils.getTFCFoodItem(Food.PUMPKIN_CHUNKS))
+                .food(SDTags.ItemTags.TFC_RAW_MEATS)
+                .nonfood(MNDItems.BULLET_PEPPER.get())
+                .nonfood(MNDItems.BULLET_PEPPER.get())
+                .fluid(milks, 100).build(out).saveFoodData();
+
+
+        cook("food/hot_wings", MNDItems.HOT_WINGS.get(), 1, 900, 1, Items.BOWL)
+                .food(SDTags.ItemTags.RAW_POULTRY)
+                .food(SDUtils.getTFCFoodItem(Food.ONION))
+                .nonfood(MNDItems.BULLET_PEPPER.get())
+                .fluid(oils, 100)
+                .build(out).saveFoodData();
+
+        cook("food/spicy_hoglin_stew_from_cooked", MNDItems.SPICY_HOGLIN_STEW.get(), 1, 900, 1, Items.BOWL)
+                .food(MNDTags.COOKED_HOGLIN)
+                .food(SDUtils.getTFCFoodItem(Food.CARROT))
+                .food(SDUtils.getTFCFoodItem(Food.POTATO))
+                .food(SDUtils.getTFCFoodItem(Food.ONION))
+                .nonfood(MNDItems.BULLET_PEPPER.get())
+                .build(out)
+                .saveFoodData();
+
+
+        cook("food/spicy_hoglin_stew", MNDItems.SPICY_HOGLIN_STEW.get(), 1, 900, 1, Items.BOWL)
+                .food(MNDTags.RAW_HOGLIN)
+                .food(SDUtils.getTFCFoodItem(Food.CARROT))
+                .food(SDUtils.getTFCFoodItem(Food.POTATO))
+                .food(SDUtils.getTFCFoodItem(Food.ONION))
+                .nonfood(MNDItems.BULLET_PEPPER.get())
+                .build(out)
+                .saveFoodData();
+
+        craft("food/spicy_skewer", MNDItems.SPICY_SKEWER.get(), 1)
+                .row("ps")
+                .row("rp")
+                .defineFood('s', MNDTags.STRIDER_MEATS)
+                .defineNonFood('p', MNDItems.BULLET_PEPPER.get())
+                .defineFood('r', Items.BLAZE_ROD)
+                .build(out)
+                .saveFoodData();
+
+        cook("food/stuffed_pepper", MNDItems.STUFFED_PEPPER.get(), 1, 200, 0.5)
+                .food(ForgeTags.COOKED_PORK)
+                .nonfood(MNDItems.BULLET_PEPPER.get())
+                .fluid(milks, 100)
+                .build(out)
+                .saveFoodData();
+
         var provider = BeneathDelight.foodAndCookingGenerator.provider();
+        provider.newBuilder("ingredient/ghasta")
+                .item(MNDItems.GHASTA.get())
+                .setDecay(0)
+                .setProtein(0.5)
+                .save();
+        provider.newBuilder("ingredient/ghasmati")
+                .item(MNDItems.GHASMATI.get())
+                .setDecay(0)
+                .setProtein(0.2)
+                .save();
         provider.newBuilder("ingredient/hoglin_loin")
                 .item(MNDItems.HOGLIN_LOIN.get())
                 .from(Food.PORK)

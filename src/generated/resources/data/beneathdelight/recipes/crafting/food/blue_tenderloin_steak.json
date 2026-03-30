@@ -1,0 +1,24 @@
+{
+  "type": "survivorsdelight:nutrition_crafting",
+  "key": {
+    "b": {
+      "item": "minecraft:bowl"
+    },
+    "l": {
+      "item": "mynethersdelight:cooked_loin"
+    },
+    "r": {
+      "item": "beneathdelight:boiled_warped_roots"
+    },
+    "w": {
+      "item": "beneathdelight:boiled_warped_fungus"
+    }
+  },
+  "pattern": [
+    "lw",
+    "rb"
+  ],
+  "result": {
+    "item": "mynethersdelight:blue_tenderloin_steak"
+  }
+}

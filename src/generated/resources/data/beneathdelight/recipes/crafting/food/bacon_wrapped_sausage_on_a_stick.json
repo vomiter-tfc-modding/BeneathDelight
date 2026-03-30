@@ -1,0 +1,21 @@
+{
+  "type": "survivorsdelight:nutrition_crafting",
+  "key": {
+    "S": {
+      "item": "mynethersdelight:roasted_sausage"
+    },
+    "b": {
+      "item": "farmersdelight:cooked_bacon"
+    },
+    "s": {
+      "item": "minecraft:stick"
+    }
+  },
+  "pattern": [
+    "Sb",
+    "s "
+  ],
+  "result": {
+    "item": "mynethersdelight:bacon-wrapped_sausage_on_a_stick"
+  }
+}

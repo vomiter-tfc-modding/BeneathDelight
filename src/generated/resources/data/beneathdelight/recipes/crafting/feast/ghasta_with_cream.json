@@ -1,0 +1,25 @@
+{
+  "type": "survivorsdelight:nutrition_crafting",
+  "key": {
+    "b": {
+      "item": "minecraft:bowl"
+    },
+    "c": {
+      "item": "minecraft:magma_cream"
+    },
+    "g": {
+      "tag": "mynethersdelight:ghast_meats"
+    },
+    "t": {
+      "item": "minecraft:ghast_tear"
+    }
+  },
+  "pattern": [
+    "ggg",
+    "gtc",
+    "gbg"
+  ],
+  "result": {
+    "item": "mynethersdelight:ghasta_with_cream"
+  }
+}

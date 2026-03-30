@@ -1,0 +1,26 @@
+{
+  "type": "farmersdelight:cooking",
+  "cookingtime": 500,
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "type": "tfc:not_rotten",
+      "ingredient": {
+        "item": "tfc:food/boiled_egg"
+      }
+    },
+    {
+      "tag": "mynethersdelight:hot_spice"
+    },
+    {
+      "type": "tfc:not_rotten",
+      "ingredient": {
+        "item": "mynethersdelight:hoglin_sausage"
+      }
+    }
+  ],
+  "result": {
+    "count": 2,
+    "item": "mynethersdelight:deviled_egg"
+  }
+}

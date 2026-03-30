@@ -6,6 +6,7 @@
   "mixins": [
     "farming.NCropUtilMixin",
     "farming.NetherCropBlockMixin",
+    "farming.PowderyCaneMixin",
     "farming.ResurgentFarmlandMixin",
     "farming.ResurgentSoilMixin",
     "food.block.BreadLoafBlock_BlockEntityMixin",

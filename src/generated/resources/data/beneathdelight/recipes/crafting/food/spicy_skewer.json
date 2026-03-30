@@ -1,0 +1,21 @@
+{
+  "type": "survivorsdelight:nutrition_crafting",
+  "key": {
+    "p": {
+      "item": "mynethersdelight:bullet_pepper"
+    },
+    "r": {
+      "item": "minecraft:blaze_rod"
+    },
+    "s": {
+      "tag": "mynethersdelight:strider_meats"
+    }
+  },
+  "pattern": [
+    "ps",
+    "rp"
+  ],
+  "result": {
+    "item": "mynethersdelight:spicy_skewer"
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "type": "survivorsdelight:nutrition_crafting",
+  "key": {
+    "c": {
+      "item": "beneathdelight:boiled_crimson_fungus"
+    },
+    "l": {
+      "item": "mynethersdelight:cooked_loin"
+    },
+    "r": {
+      "item": "minecraft:red_mushroom"
+    },
+    "s": {
+      "item": "minecraft:stick"
+    }
+  },
+  "pattern": [
+    "lc",
+    "rs"
+  ],
+  "result": {
+    "item": "mynethersdelight:red_loin_on_a_stick"
+  }
+}

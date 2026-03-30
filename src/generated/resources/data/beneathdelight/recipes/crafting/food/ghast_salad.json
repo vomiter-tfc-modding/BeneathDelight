@@ -1,0 +1,17 @@
+{
+  "type": "survivorsdelight:nutrition_crafting",
+  "key": {
+    "g": {
+      "tag": "mynethersdelight:ghast_meats"
+    },
+    "s": {
+      "item": "tfc:food/vegetables_salad"
+    }
+  },
+  "pattern": [
+    "gs"
+  ],
+  "result": {
+    "item": "mynethersdelight:ghast_salad"
+  }
+}

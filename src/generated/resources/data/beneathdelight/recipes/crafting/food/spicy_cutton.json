@@ -1,0 +1,21 @@
+{
+  "type": "survivorsdelight:nutrition_crafting",
+  "key": {
+    "g": {
+      "item": "mynethersdelight:ghasta"
+    },
+    "p": {
+      "item": "mynethersdelight:bullet_pepper"
+    },
+    "r": {
+      "item": "minecraft:blaze_rod"
+    }
+  },
+  "pattern": [
+    "gp",
+    "rg"
+  ],
+  "result": {
+    "item": "mynethersdelight:spicy_cotton"
+  }
+}
