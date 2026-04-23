@@ -22,5 +22,9 @@ public class ModItems {
     public static RegistryObject<Item> BOILED_WARPED_ROOTS
             = ITEMS.register("boiled_warped_roots", () -> new Item(new Item.Properties()));
 
+    public static RegistryObject<Item> SWEETENED_MAGMA_CREAM
+            = ITEMS.register("sweetened_magma_cream", () -> new Item(new Item.Properties()));
+
+
 
 }

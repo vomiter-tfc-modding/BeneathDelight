@@ -70,12 +70,31 @@ public class BDFoodRecipes {
 
     public void save(Consumer<FinishedRecipe> out){
 
+        cook("ingredient/hot_cream", MNDItems.HOT_CREAM.get(), 1, 200, 0.5, Items.BUCKET)
+                .food(Items.EGG)
+                .food(ModItems.SWEETENED_MAGMA_CREAM.get())
+                .food(ModItems.SWEETENED_MAGMA_CREAM.get())
+                .nonfood(MNDTags.HOT_SPICE)
+                .nonfood(MNDTags.HOT_SPICE)
+                .fluid(lavas, 1000)
+                .build(out)
+                .saveFoodData();
+
+        craft("cake/magma_cake", MNDBlocks.MAGMA_CAKE.get(), 1)
+                .shape("mmm", "ghg", "sss")
+                .defineFood('m', ModItems.SWEETENED_MAGMA_CREAM.get())
+                .defineFood('h', MNDItems.HOT_CREAM.get())
+                .defineNonFood('g', Items.GUNPOWDER)
+                .defineNonFood('s', vectorwing.farmersdelight.common.registry.ModItems.STRAW.get())
+                .build(out)
+                .saveFoodData();
+
         craft("feast/ghasta_with_cream", MNDItems.GHASTA_WITH_CREAM_BLOCK.get(), 1)
                 .shape("ggg", "gtc", "gbg")
                 .defineFood('g', MNDTags.GHAST_MEATS)
                 .defineNonFood('b', Items.BOWL)
                 .defineNonFood('t', Items.GHAST_TEAR)
-                .defineNonFood('c', Items.MAGMA_CREAM)
+                .defineFood('c', ModItems.SWEETENED_MAGMA_CREAM.get())
                 .build(out)
                 .saveFoodData();
 
@@ -294,6 +313,11 @@ public class BDFoodRecipes {
                 .slicedFrom(Food.MUTTON, 2)
                 .save();
 
+        provider.newBuilder("ingredient/sweetened_magma_cream")
+                .item(ModItems.SWEETENED_MAGMA_CREAM.get())
+                .from(Food.LEMON)
+                .save();
+
         Map.of(
                 ModItems.BOILED_CRIMSON_FUNGUS, Items.CRIMSON_FUNGUS,
                 ModItems.BOILED_CRIMSON_FUNGUS_COLONY, MNDItems.CRIMSON_FUNGUS_COLONY.get(),
@@ -302,6 +326,7 @@ public class BDFoodRecipes {
                 ModItems.BOILED_WARPED_FUNGUS_COLONY, MNDItems.WARPED_FUNGUS_COLONY.get(),
                 ModItems.BOILED_WARPED_ROOTS, Items.WARPED_ROOTS
         ).forEach((boiled, ingredient) -> {
+            assert boiled.getId() != null;
             cook("ingredient/" + boiled.getId().getPath(), boiled.get(), 1, 200, 1)
                     .nonfood(sweetener)
                     .nonfood(ingredient)

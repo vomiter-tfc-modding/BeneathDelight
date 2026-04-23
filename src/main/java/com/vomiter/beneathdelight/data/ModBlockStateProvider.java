@@ -64,6 +64,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
         itemModels().withExistingParent("boiled_warped_roots", mcLoc("warped_roots"));
         itemModels().withExistingParent("boiled_crimson_fungus_colony", Helpers.id(MyNethersDelight.MODID,"crimson_fungus_colony"));
         itemModels().withExistingParent("boiled_warped_fungus_colony", Helpers.id(MyNethersDelight.MODID,"warped_fungus_colony"));
+        itemModels().withExistingParent("sweetened_magma_cream", mcLoc("magma_cream"));
     }
 
     private void registerMNDCabinet(Block block){

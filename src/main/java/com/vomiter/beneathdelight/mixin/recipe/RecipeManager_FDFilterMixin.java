@@ -72,7 +72,14 @@ public abstract class RecipeManager_FDFilterMixin {
             "cooking/twisted_ghasta",
             "cooking/fries_ghasta",
             "cooking/giant_tentacles",
-            "crafting/spicy_cutton"
+            "crafting/spicy_cutton",
+            "crafting/magma_cake",
+            "crafting/magma_cake_alt",
+            "crafting/hotcream_bucket",
+            "cooking/hotcream",
+            "crafting/hotcream_cone",
+            "cutting/magma_cake",
+            "crafting/hot_wings_bucket"
     );
 
 

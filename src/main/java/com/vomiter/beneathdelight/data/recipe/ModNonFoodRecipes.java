@@ -6,6 +6,8 @@ import com.soytutta.mynethersdelight.common.registry.MNDItems;
 import com.soytutta.mynethersdelight.common.tag.MNDTags;
 import com.vomiter.beneathdelight.Helpers;
 import com.vomiter.beneathdelight.registry.ModBlocks;
+import com.vomiter.beneathdelight.registry.ModItems;
+import com.vomiter.survivorsdelight.data.tags.SDTags;
 import com.vomiter.survivorsdelight.util.SDUtils;
 import net.dries007.tfc.common.TFCTags;
 import net.dries007.tfc.common.blocks.TFCBlocks;
@@ -14,6 +16,7 @@ import net.minecraft.advancements.critereon.InventoryChangeTrigger;
 import net.minecraft.data.recipes.FinishedRecipe;
 import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.data.recipes.ShapedRecipeBuilder;
+import net.minecraft.data.recipes.ShapelessRecipeBuilder;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.block.Blocks;
@@ -67,6 +70,14 @@ public class ModNonFoodRecipes {
                 .unlockedBy("has_hoglin_hide",
                         InventoryChangeTrigger.TriggerInstance.hasItems(MNDItems.HOGLIN_HIDE.get()))
                 .save(out, Helpers.id("crafting/hoglin_trophy"));
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ModItems.SWEETENED_MAGMA_CREAM.get())
+                .requires(SDTags.ItemTags.TFC_SWEETENER)
+                .requires(SDTags.ItemTags.TFC_SWEETENER)
+                .requires(SDTags.ItemTags.TFC_SWEETENER)
+                .requires(Items.MAGMA_CREAM)
+                .unlockedBy("has_magma_cream", InventoryChangeTrigger.TriggerInstance.hasItems(Items.MAGMA_CREAM))
+                .save(out, Helpers.id("crafting/sweetened_magma_cream"));
 
         CuttingBoardRecipeBuilder.cuttingRecipe(
                 Ingredient.of(MNDItems.POWDER_CANNON.get()),
