@@ -1,0 +1,25 @@
+{
+  "type": "survivorsdelight:nutrition_crafting",
+  "key": {
+    "g": {
+      "item": "minecraft:gunpowder"
+    },
+    "h": {
+      "item": "mynethersdelight:hot_cream"
+    },
+    "m": {
+      "item": "beneathdelight:sweetened_magma_cream"
+    },
+    "s": {
+      "item": "farmersdelight:straw"
+    }
+  },
+  "pattern": [
+    "mmm",
+    "ghg",
+    "sss"
+  ],
+  "result": {
+    "item": "mynethersdelight:magma_cake_block"
+  }
+}

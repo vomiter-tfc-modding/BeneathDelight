@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "tag": "tfc:sweetener"
+    },
+    {
+      "tag": "tfc:sweetener"
+    },
+    {
+      "tag": "tfc:sweetener"
+    },
+    {
+      "item": "minecraft:magma_cream"
+    }
+  ],
+  "result": {
+    "item": "beneathdelight:sweetened_magma_cream"
+  }
+}

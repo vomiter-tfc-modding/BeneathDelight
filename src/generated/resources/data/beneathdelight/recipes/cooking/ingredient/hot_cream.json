@@ -1,0 +1,43 @@
+{
+  "type": "farmersdelight:cooking",
+  "container": {
+    "item": "minecraft:bucket"
+  },
+  "cookingtime": 200,
+  "experience": 0.5,
+  "fluid": {
+    "amount": 1000,
+    "ingredient": {
+      "tag": "minecraft:lava"
+    }
+  },
+  "ingredients": [
+    {
+      "type": "tfc:not_rotten",
+      "ingredient": {
+        "item": "minecraft:egg"
+      }
+    },
+    {
+      "type": "tfc:not_rotten",
+      "ingredient": {
+        "item": "beneathdelight:sweetened_magma_cream"
+      }
+    },
+    {
+      "type": "tfc:not_rotten",
+      "ingredient": {
+        "item": "beneathdelight:sweetened_magma_cream"
+      }
+    },
+    {
+      "tag": "mynethersdelight:hot_spice"
+    },
+    {
+      "tag": "mynethersdelight:hot_spice"
+    }
+  ],
+  "result": {
+    "item": "mynethersdelight:hot_cream"
+  }
+}
