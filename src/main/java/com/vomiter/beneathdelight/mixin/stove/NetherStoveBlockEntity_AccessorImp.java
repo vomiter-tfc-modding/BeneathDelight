@@ -1,7 +1,7 @@
 package com.vomiter.beneathdelight.mixin.stove;
 
 import com.soytutta.mynethersdelight.common.block.entity.NetherStoveBlockEntity;
-import com.vomiter.survivorsdelight.adapter.stove.IStoveBlockEntity;
+import com.vomiter.beneathdelight.adapter.INetherStoveBlockEntity;
 import net.minecraft.core.BlockPos;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.entity.BlockEntityType;
@@ -11,14 +11,15 @@ import org.spongepowered.asm.mixin.Mixin;
 import vectorwing.farmersdelight.common.block.entity.SyncedBlockEntity;
 
 @Mixin(value = NetherStoveBlockEntity.class, remap = false)
-public abstract class NetherStoveBlockEntity_AccessorImp extends SyncedBlockEntity implements IStoveBlockEntity {
+public abstract class NetherStoveBlockEntity_AccessorImp extends SyncedBlockEntity implements INetherStoveBlockEntity {
     public NetherStoveBlockEntity_AccessorImp(BlockEntityType<?> tileEntityTypeIn, BlockPos pos, BlockState state) {
         super(tileEntityTypeIn, pos, state);
     }
 
-    public SyncedBlockEntity sdtfc$getBlockEntity(){
-        return this;
-    };
+    public NetherStoveBlockEntity sdtfc$getBlockEntity(){
+        return (NetherStoveBlockEntity) (Object)this;
+    }
+    ;
     public ItemStackHandler sdtfc$getInventory(){
         return ((NetherStoveBlockEntity)(Object)this).getInventory();
     };

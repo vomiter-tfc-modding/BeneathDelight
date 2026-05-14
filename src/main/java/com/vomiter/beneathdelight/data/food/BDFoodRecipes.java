@@ -30,7 +30,8 @@ import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.material.Fluid;
 import net.minecraft.world.level.material.Fluids;
-import vectorwing.farmersdelight.common.tag.ForgeTags;
+import vectorwing.farmersdelight.common.tag.CommonTags;
+import vectorwing.farmersdelight.common.tag.ModTags;
 import vectorwing.farmersdelight.data.builder.CuttingBoardRecipeBuilder;
 
 import java.util.Map;
@@ -255,7 +256,7 @@ public class BDFoodRecipes {
                 .saveFoodData();
 
         cook("food/stuffed_pepper", MNDItems.STUFFED_PEPPER.get(), 1, 200, 0.5)
-                .food(ForgeTags.COOKED_PORK)
+                .food(CommonTags.Items.COOKED_PORK)
                 .nonfood(MNDItems.BULLET_PEPPER.get())
                 .fluid(milks, 100)
                 .build(out)
@@ -412,7 +413,7 @@ public class BDFoodRecipes {
                         MNDItems.MINCED_STRIDER.get(), 2)
                 .addResult(Items.STRING, 2)
                 .addResultWithChance(Items.STRING, 0.5f, 2)
-                .build(out, Helpers.id("cutting/strider_slice"));
+                .save(out, Helpers.id("cutting/strider_slice"));
 
         ShapelessRecipeBuilder.shapeless(
                 RecipeCategory.FOOD,
@@ -474,13 +475,13 @@ public class BDFoodRecipes {
                         Ingredient.of(TFCTags.Items.KNIVES),
                         MNDItems.GHASMATI.get(), 1)
                 .addResultWithChance(MNDItems.GHASMATI.get(), 0.5f, 1)
-                .build(out, Helpers.id("cutting/ghasmati"));
+                .save(out, Helpers.id("cutting/ghasmati"));
 
         CuttingBoardRecipeBuilder.cuttingRecipe(
                         NotRottenIngredient.of(Ingredient.of(MNDItems.GHAST_SOURDOUGH.get())),
                         Ingredient.of(TFCTags.Items.KNIVES),
                         MNDItems.GHAST_DOUGH.get(), 3)
-                .build(out, Helpers.id("cutting/ghast_dough"));
+                .save(out, Helpers.id("cutting/ghast_dough"));
 
     }
 

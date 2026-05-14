@@ -35,7 +35,7 @@ import vectorwing.farmersdelight.common.utility.ItemUtils;
 @Mixin(value = BreadLoafBlock.class, remap = false)
 public abstract class BreadLoafBlock_SliceMixin {
 
-    @WrapOperation(method = "use", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/item/ItemStack;is(Lnet/minecraft/tags/TagKey;)Z", remap = true))
+    @WrapOperation(method = "use", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/item/ItemStack;is(Lnet/minecraft/tags/TagKey;)Z", remap = true), remap = true)
     private boolean sdtfc$useTFCKnife(ItemStack itemStack, TagKey<Item> tagKey, Operation<Boolean> original){
         if(tagKey.location().equals(Helpers.id(FarmersDelight.MODID, "tools/knives"))){
             return original.call(itemStack, TFCTags.Items.KNIVES);

@@ -38,7 +38,7 @@ public abstract class MagmaCakeBlock_SliceMixin {
 
     @Shadow public abstract ItemStack getPieSliceItem();
 
-    @WrapOperation(method = "use", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/item/ItemStack;is(Lnet/minecraft/tags/TagKey;)Z", remap = true))
+    @WrapOperation(method = "use", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/item/ItemStack;is(Lnet/minecraft/tags/TagKey;)Z", remap = true), remap = true)
     private boolean sdtfc$useTFCKnife(ItemStack itemStack, TagKey<Item> tagKey, Operation<Boolean> original){
         if(tagKey.location().equals(Helpers.id(FarmersDelight.MODID, "tools/knives"))){
             return original.call(itemStack, TFCTags.Items.KNIVES);

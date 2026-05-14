@@ -84,28 +84,28 @@ public class ModNonFoodRecipes {
                 Ingredient.of(TFCTags.Items.KNIVES),
                 Items.GUNPOWDER)
                 .addResultWithChance(Items.GUNPOWDER, 0.25f)
-                .build(out, Helpers.id("cutting/powdery_cannon"));
+                .save(out, Helpers.id("cutting/powdery_cannon"));
 
         CuttingBoardRecipeBuilder.cuttingRecipe(
                         Ingredient.of(MNDItems.HOGLIN_HIDE.get()),
                         Ingredient.of(SDUtils.TagUtils.itemTag("tfc", "shears")),
                         BeneathItems.CURSED_HIDE.get())
                 .addResultWithChance(BeneathItems.CURSED_HIDE.get(), 0.25f)
-                .build(out, Helpers.id("cutting/hoglin_hide"));
+                .save(out, Helpers.id("cutting/hoglin_hide"));
 
         CuttingBoardRecipeBuilder.cuttingRecipe(
                 Ingredient.of(MNDItems.CRIMSON_FUNGUS_COLONY.get()),
                 Ingredient.of(TFCTags.Items.KNIVES),
                 Items.CRIMSON_FUNGUS,
                 5
-        ).build(out, Helpers.id("cutting/crimson_fungus_colony"));
+        ).save(out, Helpers.id("cutting/crimson_fungus_colony"));
 
         CuttingBoardRecipeBuilder.cuttingRecipe(
                 Ingredient.of(MNDItems.WARPED_FUNGUS_COLONY.get()),
                 Ingredient.of(TFCTags.Items.KNIVES),
                 Items.WARPED_FUNGUS,
                 5
-        ).build(out, Helpers.id("cutting/warped_fungus_colony"));
+        ).save(out, Helpers.id("cutting/warped_fungus_colony"));
 
 
     }

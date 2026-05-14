@@ -2,6 +2,7 @@ package com.vomiter.beneathdelight.mixin.stove;
 
 import com.soytutta.mynethersdelight.common.block.NetherStoveBlock;
 import com.soytutta.mynethersdelight.common.block.entity.NetherStoveBlockEntity;
+import com.vomiter.beneathdelight.adapter.INetherStoveBlockEntity;
 import com.vomiter.survivorsdelight.adapter.stove.IStoveBlockEntity;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.InteractionHand;
@@ -42,7 +43,7 @@ public class NetherStoveBlock_FuelAndHeat {
     private void addFood(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit, CallbackInfoReturnable<InteractionResult> cir){
         ItemStack heldItem = player.getItemInHand(hand);
         NetherStoveBlockEntity stove = (NetherStoveBlockEntity) level.getBlockEntity(pos);
-        IStoveBlockEntity iStove = (IStoveBlockEntity)stove;
+        INetherStoveBlockEntity iStove = (INetherStoveBlockEntity) stove;
         assert iStove != null;
         if(iStove.sdtfc$addItem(heldItem, stove.getNextEmptySlot(), iStove, player)) cir.setReturnValue(InteractionResult.sidedSuccess(level.isClientSide));
     }
